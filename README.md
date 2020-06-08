@@ -1,3 +1,10 @@
+URL on Frontend:  magento.localhost/orderquestion/
+
+Admin Panel:  Sales -> Order Questions
+
+
+Task Description 
+
 Find here attached the user case we want to develop:
 
 We want you to build a customer's page in which customers can ask questions about their order.
