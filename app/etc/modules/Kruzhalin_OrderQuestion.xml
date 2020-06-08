@@ -1,0 +1,9 @@
+<config>
+    <modules>
+        <Kruzhalin_OrderQuestion>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends />
+        </Kruzhalin_OrderQuestion>
+    </modules>
+</config>

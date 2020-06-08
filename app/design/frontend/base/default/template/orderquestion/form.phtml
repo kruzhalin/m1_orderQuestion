@@ -1,0 +1,46 @@
+<?php
+/** @var Kruzhalin_OrderQuestion_Block_Form $this */
+
+$helper = Mage::helper('orderquestion');
+?>
+
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+<div class="page-title">
+    <h1><?php echo $helper->__('Order Question') ?></h1>
+</div>
+<form action="<?php echo $this->getFormAction(); ?>" id="orderQuestionForm" method="post">
+    <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+    <div class="fieldset">
+        <ul class="form-list">
+            <li class="fields">
+                <div class="field">
+                    <label for="order_number" class="required"><em>*</em><?php echo $helper->__('Order Number') ?></label>
+                    <div class="input-box">
+                        <input name="order_number" id="order_number" title="<?php echo $this->quoteEscape($helper->__('Order Number')) ?>" value="<?php echo $this->quoteEscape($this->getOrderNumber());?>" class="input-text required-entry" type="text" />
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="email" class="required"><em>*</em><?php echo $helper->__('Email') ?></label>
+                    <div class="input-box">
+                        <input name="email" id="email" title="<?php echo $this->quoteEscape($helper->__('Email')) ?>" value="<?php echo $this->quoteEscape($this->getEmail());?>" class="input-text required-entry validate-email" type="text" />
+                    </div>
+                </div>
+            </li>
+            <li class="wide">
+                <label for="question" class="required"><em>*</em><?php echo $helper->__('Question') ?></label>
+                <div class="input-box">
+                    <textarea name="question" id="question" title="<?php echo $this->quoteEscape($helper->__('Question')) ?>" class="required-entry input-text" cols="5" rows="3"><?php echo $this->quoteEscape($this->getQuestion());?></textarea>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons-set">
+        <p class="required"><?php echo $helper->__('* Required Fields') ?></p>
+        <button type="submit" title="<?php echo $this->quoteEscape($helper->__('Submit')) ?>" class="button"><span><span><?php echo $helper->__('Submit') ?></span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+    //<![CDATA[
+    var contactForm = new VarienForm('orderQuestionForm', true);
+    //]]>
+</script>

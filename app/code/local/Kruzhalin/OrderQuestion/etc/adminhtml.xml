@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<config>
+    <menu>
+        <sales>
+            <children>
+                <orderquestion translate="title" module="orderquestion">
+                    <sort_order>990</sort_order>
+                    <title>Order Questions</title>
+                    <action>adminhtml/question</action>
+                </orderquestion>
+            </children>
+        </sales>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <orderquestion translate="title" module="c">
+                                <title>Order Questions</title>
+                                <sort_order>990</sort_order>
+                            </orderquestion>
+                        </children>
+                    </sales>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <orderquestion translate="title" module="v">
+                                        <title>Order Question Configuration</title>
+                                        <sort_order>990</sort_order>
+                                    </orderquestion>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
