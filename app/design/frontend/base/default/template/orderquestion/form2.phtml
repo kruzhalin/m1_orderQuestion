@@ -1,0 +1,45 @@
+<?php
+/** @var Kruzhalin_OrderQuestion_Block_Form2 $this */
+
+$helper = Mage::helper('orderquestion');
+$order  = $this->getOrder();
+?>
+
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+<div class="page-title">
+    <h1><?php echo $helper->__('Order Question') ?></h1>
+</div>
+<?php if ($order): ?>
+    <h3><?php echo $this->__('Order #').' '.$order->getIncrementId();?></h3>
+    <div class="order-items">
+        <?php echo $this->getChild('order_items')
+            ->setOrder($order)->toHtml(); ?>
+    </div>
+<?php endif; ?>
+<p>&nbsp;</p>
+<form action="<?php echo $this->getFormAction(); ?>" id="orderQuestionForm" method="post">
+    <input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>"/>
+    <div class="fieldset">
+        <ul class="form-list">
+            <input type="hidden" name="order_id" value="<?php echo $order->getId() ?>" />
+            <li class="wide">
+                <label for="question" class="required"><em>*</em><?php echo $helper->__('Question') ?></label>
+                <div class="input-box">
+                        <textarea name="question" id="question"
+                                  title="<?php echo $this->quoteEscape($helper->__('Question')) ?>"
+                                  class="required-entry input-text" cols="5" rows="3"></textarea>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons-set">
+        <p class="required"><?php echo $helper->__('* Required Fields') ?></p>
+        <button type="submit" title="<?php echo $this->quoteEscape($helper->__('Submit')) ?>" class="button">
+            <span><span><?php echo $helper->__('Submit') ?></span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+    //<![CDATA[
+    var contactForm = new VarienForm('orderQuestionForm', true);
+    //]]>
+</script>

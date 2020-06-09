@@ -26,17 +26,11 @@ $helper = Mage::helper('orderquestion');
                     </div>
                 </div>
             </li>
-            <li class="wide">
-                <label for="question" class="required"><em>*</em><?php echo $helper->__('Question') ?></label>
-                <div class="input-box">
-                    <textarea name="question" id="question" title="<?php echo $this->quoteEscape($helper->__('Question')) ?>" class="required-entry input-text" cols="5" rows="3"><?php echo $this->quoteEscape($this->getQuestion());?></textarea>
-                </div>
-            </li>
         </ul>
     </div>
     <div class="buttons-set">
         <p class="required"><?php echo $helper->__('* Required Fields') ?></p>
-        <button type="submit" title="<?php echo $this->quoteEscape($helper->__('Submit')) ?>" class="button"><span><span><?php echo $helper->__('Submit') ?></span></span></button>
+        <button type="submit" title="<?php echo $this->quoteEscape($helper->__('Continue')) ?>" class="button"><span><span><?php echo $helper->__('Continue') ?></span></span></button>
     </div>
 </form>
 <script type="text/javascript">
